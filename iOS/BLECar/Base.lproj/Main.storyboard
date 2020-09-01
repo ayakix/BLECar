@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BLECar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtV-xo-mBt" userLabel="Refresh Button">
+                                <rect key="frame" x="22" y="22" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="ovb-vp-pOn"/>
+                                </constraints>
+                                <state key="normal" image="refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vHu-BK-Ejl"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-nk-P7b">
+                                <rect key="frame" x="111" y="454" width="1144" height="550"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rw-3V-cfQ" customClass="JoystickView" customModule="JoystickView">
+                                        <rect key="frame" x="0.0" y="0.0" width="550" height="550"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystick-vertical-bg" translatesAutoresizingMaskIntoConstraints="NO" id="1im-IV-FR7">
+                                                <rect key="frame" x="133.5" y="0.0" width="283" height="550"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="1im-IV-FR7" secondAttribute="height" multiplier="262:509" id="TnL-Y6-Y92"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jStick" translatesAutoresizingMaskIntoConstraints="NO" id="FfQ-Xl-WgJ">
+                                                <rect key="frame" x="165" y="165.5" width="220" height="219"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="FfQ-Xl-WgJ" secondAttribute="height" multiplier="1:1" constant="1" id="LFt-QU-sdG"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="FfQ-Xl-WgJ" firstAttribute="width" secondItem="1Rw-3V-cfQ" secondAttribute="width" multiplier="0.4" id="Glf-CF-933"/>
+                                            <constraint firstItem="FfQ-Xl-WgJ" firstAttribute="centerY" secondItem="1Rw-3V-cfQ" secondAttribute="centerY" id="Iz6-03-kvS"/>
+                                            <constraint firstAttribute="width" secondItem="1Rw-3V-cfQ" secondAttribute="height" multiplier="1:1" id="Puh-Pp-2x6"/>
+                                            <constraint firstItem="FfQ-Xl-WgJ" firstAttribute="centerX" secondItem="1Rw-3V-cfQ" secondAttribute="centerX" id="XzG-LP-7MW"/>
+                                            <constraint firstItem="1im-IV-FR7" firstAttribute="top" secondItem="1Rw-3V-cfQ" secondAttribute="top" id="d2N-Lm-TaL"/>
+                                            <constraint firstAttribute="bottom" secondItem="1im-IV-FR7" secondAttribute="bottom" id="dfc-WW-u5u"/>
+                                            <constraint firstItem="1im-IV-FR7" firstAttribute="centerY" secondItem="1Rw-3V-cfQ" secondAttribute="centerY" id="dth-BI-V1h"/>
+                                            <constraint firstItem="1im-IV-FR7" firstAttribute="centerX" secondItem="1Rw-3V-cfQ" secondAttribute="centerX" id="naa-df-hEn"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="joystickBg" destination="1im-IV-FR7" id="tJi-1v-T1R"/>
+                                            <outlet property="joystickThumb" destination="FfQ-Xl-WgJ" id="Uuh-6A-14H"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eS-3z-wd1" userLabel="HJoystick View" customClass="JoystickView" customModule="JoystickView">
+                                        <rect key="frame" x="594" y="131.5" width="550" height="287"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystick-car-bg" translatesAutoresizingMaskIntoConstraints="NO" id="SoH-LI-qmf">
+                                                <rect key="frame" x="0.0" y="0.0" width="550" height="287"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="SoH-LI-qmf" secondAttribute="height" multiplier="274:143" id="tIt-Z0-22j"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jStick" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-eu-pOo">
+                                                <rect key="frame" x="159.5" y="28.5" width="231" height="230"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xsc-eu-pOo" secondAttribute="height" multiplier="1:1" constant="1" id="dSc-23-LWt"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="SoH-LI-qmf" firstAttribute="top" secondItem="4eS-3z-wd1" secondAttribute="top" id="5HY-9Z-l9W"/>
+                                            <constraint firstItem="xsc-eu-pOo" firstAttribute="centerY" secondItem="4eS-3z-wd1" secondAttribute="centerY" id="7EM-AJ-XWW"/>
+                                            <constraint firstItem="xsc-eu-pOo" firstAttribute="height" secondItem="4eS-3z-wd1" secondAttribute="height" multiplier="0.8" id="Akp-iQ-jOX"/>
+                                            <constraint firstItem="xsc-eu-pOo" firstAttribute="centerX" secondItem="4eS-3z-wd1" secondAttribute="centerX" id="Awv-Ki-AbR"/>
+                                            <constraint firstAttribute="trailing" secondItem="SoH-LI-qmf" secondAttribute="trailing" id="Cj2-ju-yUA"/>
+                                            <constraint firstItem="SoH-LI-qmf" firstAttribute="leading" secondItem="4eS-3z-wd1" secondAttribute="leading" id="ZtC-x4-bB2"/>
+                                            <constraint firstAttribute="bottom" secondItem="SoH-LI-qmf" secondAttribute="bottom" id="eWg-Cd-k0G"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="joystickBg" destination="SoH-LI-qmf" id="oeL-9q-ocI"/>
+                                            <outlet property="joystickThumb" destination="xsc-eu-pOo" id="Xqh-7Q-2ar"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="4eS-3z-wd1" firstAttribute="centerY" secondItem="1Rw-3V-cfQ" secondAttribute="centerY" id="9vA-AL-TB6"/>
+                                    <constraint firstItem="4eS-3z-wd1" firstAttribute="leading" secondItem="1Rw-3V-cfQ" secondAttribute="trailing" constant="44" id="Tef-pg-rbd"/>
+                                    <constraint firstItem="1Rw-3V-cfQ" firstAttribute="top" secondItem="gBE-nk-P7b" secondAttribute="top" id="Vrb-zO-2Oe"/>
+                                    <constraint firstItem="1Rw-3V-cfQ" firstAttribute="leading" secondItem="gBE-nk-P7b" secondAttribute="leading" id="Wxg-dZ-rUA"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Rw-3V-cfQ" secondAttribute="bottom" id="epO-c5-xXI"/>
+                                    <constraint firstAttribute="trailing" secondItem="4eS-3z-wd1" secondAttribute="trailing" id="fR3-0w-gbx"/>
+                                    <constraint firstItem="4eS-3z-wd1" firstAttribute="centerY" secondItem="gBE-nk-P7b" secondAttribute="centerY" id="g8D-N8-cn6"/>
+                                    <constraint firstItem="4eS-3z-wd1" firstAttribute="width" secondItem="1Rw-3V-cfQ" secondAttribute="width" id="yyC-BQ-05u"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNJ-lm-C6i">
+                                <rect key="frame" x="478" y="44" width="410" height="410"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LNJ-lm-C6i" secondAttribute="height" multiplier="1:1" id="096-Zd-Wf4"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="buzzer"/>
+                                <connections>
+                                    <action selector="buzzerButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CYr-bg-qyu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gtV-xo-mBt" firstAttribute="width" secondItem="gtV-xo-mBt" secondAttribute="height" multiplier="1:1" id="0DK-WM-1D7"/>
+                            <constraint firstItem="gtV-xo-mBt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="7E7-ab-JBk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gBE-nk-P7b" secondAttribute="bottom" id="7lK-DE-iUx"/>
+                            <constraint firstItem="LNJ-lm-C6i" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ErT-yx-0Gg"/>
+                            <constraint firstItem="gtV-xo-mBt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="FWJ-8T-IaX"/>
+                            <constraint firstItem="LNJ-lm-C6i" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="Q6E-4z-euC"/>
+                            <constraint firstItem="gBE-nk-P7b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RTJ-lH-dOx"/>
+                            <constraint firstItem="gBE-nk-P7b" firstAttribute="top" secondItem="LNJ-lm-C6i" secondAttribute="bottom" id="Zx8-6d-MBO"/>
+                            <constraint firstItem="LNJ-lm-C6i" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.3" id="iXL-dD-HRD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="hJoystickView" destination="4eS-3z-wd1" id="nlf-gl-dqA"/>
+                        <outlet property="vJoystickView" destination="1Rw-3V-cfQ" id="u3B-Va-EyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.60714285714286" y="137.68115942028987"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buzzer" width="166" height="166"/>
+        <image name="jStick" width="42" height="42"/>
+        <image name="joystick-car-bg" width="274" height="143"/>
+        <image name="joystick-vertical-bg" width="262" height="509"/>
+        <image name="refresh" width="512" height="512"/>
+    </resources>
+</document>
