@@ -16,4 +16,5 @@ jobs:
         source_ref: ${{ github.ref }}
         target_branch: 'ph3'
         github_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: git config --global push.default current
     - run: git push origin HEAD
